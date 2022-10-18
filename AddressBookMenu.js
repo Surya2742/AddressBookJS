@@ -20,6 +20,10 @@ while (flag) {
             addressBook.editContact(fName);
             break;
         case 4:
+            let pName = prompt("Enter the first Name to delete Contact details : ");
+            addressBook.deleteContact(pName);
+            break;
+        case 5:
             console.log("EXITED !!!");
             flag = false;
             break;
@@ -34,6 +38,7 @@ function menu() {
     console.log("Press 1 - To insert new contact");
     console.log("Press 2 - To display details");
     console.log("Press 3 - To edit contact details");
-    console.log("Press 4 - To exit");
+    console.log("Press 4 - To delete contact")
+    console.log("Press 5 - To exit");
     return parseInt(prompt("Enter your choice : "));
 }

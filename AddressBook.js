@@ -20,7 +20,7 @@ class AddressBook {
         }
     }
 
-    show () {
+    show() {
         console.log(this.contactInfoList);
     }
 
@@ -72,6 +72,19 @@ class AddressBook {
                         console.log("You have entered invalid input!");
                         break;
                 }
+            }
+            else {
+                console.log("Contact not Found.");
+            }
+        });
+    }
+
+    deleteContact(fname) {
+        this.contactInfoList.forEach(element => {
+            if ((element.fName == fname)) {
+                let index = this.contactInfoList.indexOf(fname);
+                this.contactInfoList.splice(index, 1);
+                console.log("Contact Deleted.");
             }
             else {
                 console.log("Contact not Found.");
