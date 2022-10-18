@@ -24,6 +24,9 @@ while (flag) {
             addressBook.deleteContact(pName);
             break;
         case 5:
+            console.log("Number of contacts in address book are : " + addressBook.contactInfoList.length);
+            break;
+        case 6:
             console.log("EXITED !!!");
             flag = false;
             break;
@@ -39,6 +42,7 @@ function menu() {
     console.log("Press 2 - To display details");
     console.log("Press 3 - To edit contact details");
     console.log("Press 4 - To delete contact")
-    console.log("Press 5 - To exit");
+    console.log("Press 5 - To get count of contacts in address book")
+    console.log("Press 6 - To exit");
     return parseInt(prompt("Enter your choice : "));
 }
