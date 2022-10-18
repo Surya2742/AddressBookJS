@@ -21,7 +21,7 @@ class ContactDetails {
     }
     
     get fName() {
-        return firstName;
+        return this.firstName;
     }
    
     set fName(firstName) {
@@ -35,7 +35,7 @@ class ContactDetails {
     }
 
     get lName() {
-        return lastName;
+        return this.lastName;
     }
     
     set lName(lastName) {
@@ -49,7 +49,7 @@ class ContactDetails {
     }
 
     get add() {
-        return address;
+        return this.address;
     }
    
     set add(address) {
@@ -63,7 +63,7 @@ class ContactDetails {
     }
 
     get cityName() {
-        return city;
+        return this.city;
     }
    
     set cityName(city) {
@@ -77,7 +77,7 @@ class ContactDetails {
     }
 
     get stateName() {
-        return state;
+        return this.state;
     }
    
     set stateName(state) {
@@ -91,7 +91,7 @@ class ContactDetails {
     }
 
     get zipCode() {
-        return zip;
+        return this.zip;
     }
    
     set zipCode(zip) {
@@ -105,7 +105,7 @@ class ContactDetails {
     }
 
     get pNumber() {
-        return phoneNumber;
+        return this.phoneNumber;
     }
    
     set pNumber(phoneNumber) {
@@ -119,7 +119,7 @@ class ContactDetails {
     }
 
     get eMail() {
-        return email;
+        return this.email;
     }
    
     set eMail(email) {
