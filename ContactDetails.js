@@ -9,80 +9,127 @@ class ContactDetails {
     phoneNumber;
     email;
 
-    constructor (firstName,lastName,address,city,state,zip,phoneNumber,email){
-        firstName = this.firstName;
-        lastName = this.lastName;
-        address = this.address;
-        city = this.city;
-        state = this.state;
-        zip = this.zip;
-        phoneNumber = this.phoneNumber;
-        email = this.email;
+    constructor (...params){
+        this.firstName = params[0];
+        this.lastName = params[1];
+        this.address = params[2];
+        this.city = params[3];
+        this.state = params[4];
+        this.zip = params[5];
+        this.phoneNumber = params[6];
+        this.email = params[7];
     }
     
-    // getters and setters
-    get firstName() {
+    get fName() {
         return firstName;
     }
    
-    set firstName(firstName) {
-        firstName = this.firstName;
+    set fName(firstName) {
+        let regex = RegExp('[A-Z][a-z]{3,}');
+        if (regex.test(firstName)) {
+            this.firstName = firstName;
+        }
+        else {
+            throw "Incorrect First Name !!!";
+        }
     }
 
-    get lastName() {
+    get lName() {
         return lastName;
     }
     
-    set lastName(lastName) {
-        lastName = this.lastName;
+    set lName(lastName) {
+        let regex = RegExp('[A-Z][a-z]{3,}');
+        if (regex.test(lastName)) {
+            this.lastName = lastName;
+        }
+        else {
+            throw "Incorrect Last Name !!!";
+        }
     }
 
-    get address() {
+    get add() {
         return address;
     }
    
-    set address(address) {
-        address = this.address;
+    set add(address) {
+        let regex = RegExp('[A-Z][a-z]{4,}');
+        if ( regex.test( address )) {
+            this.address = address;
+        }
+        else {
+            throw "Incorrect Address !!!";
+        }
     }
 
-    get city() {
+    get cityName() {
         return city;
     }
    
-    set city(city) {
-        city = this.city;
+    set cityName(city) {
+        let regex = RegExp('[A-Z][a-z]{4,}');
+        if ( regex.test( city )) {
+            this.city = city;
+        }
+        else {
+            throw "Incorrect City Name !!!";
+        }
     }
 
-    get state() {
+    get stateName() {
         return state;
     }
    
-    set state(state) {
-        state = this.state;
+    set stateName(state) {
+        let regex = RegExp('[A-Z][a-z]{4,}');
+        if ( regex.test( state )) {
+            this.state = state;
+        }
+        else {
+            throw "Incorrect State Name !!!";
+        }
     }
 
-    get zip() {
+    get zipCode() {
         return zip;
     }
    
-    set zip(zip) {
-        zip = this.zip;
+    set zipCode(zip) {
+        let regex = RegExp('[0-9]{3,6}');
+        if ( regex.test( zip )) {
+            this.zip = zip;
+        }
+        else {
+            throw "Incorrect Zip Number !!!";
+        }
     }
 
-    get phoneNumber() {
+    get pNumber() {
         return phoneNumber;
     }
    
-    set phoneNumber(phoneNumber) {
-        phoneNumber = this.phoneNumber;
+    set pNumber(phoneNumber) {
+        let regex = RegExp('[6-9][0-9]{9}');
+        if ( regex.test( phoneNumber.split('\n') )) {
+            this.phoneNumber = phoneNumber;
+        }
+        else {
+            throw "Incorrect phone number !!!";
+        }
     }
 
-    get email() {
+    get eMail() {
         return email;
     }
    
-    set email(email) {
-        email = this.email;
+    set eMail(email) {
+        let regex = RegExp('^[a-zA-Z0-9]{1,}[.+-]?[a-zA-Z0-9]{1,}?[@][a-zA-Z0-9]{1,}([.][a-zA-Z]{2,}){1,2}$');
+        if ( regex.test( email )) {
+            this.email = email;
+        }
+        else {
+            throw "Incorrect email address !!!";
+        }
     }
 
     toString() {
@@ -90,7 +137,7 @@ class ContactDetails {
                                 ", state = " +this.state + ", zip = " +this.zip + ", phoneNumber = " +this.phoneNumber + ", email = " +this.email;
     }
 
-
+    
 }
 
 module.exports = ContactDetails;
